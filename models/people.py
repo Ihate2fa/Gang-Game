@@ -1,13 +1,12 @@
 class Human:
 	def __init__(self,
-			name: str,
-				 
+			name: str, 
 			age: int,
 			height: int,
 			weight: int,
 			health: int,
             intelligence: int,
-			
+			location: str,
 			money: int,
 			mood: list,
 			inventory: list,
@@ -18,19 +17,23 @@ class Human:
 		self.weight = weight
 		self.health = health
 		self.intelligence = intelligence
+		self.location = location
 		self.money = money
 		self.mood = mood
 		self.inventory = inventory
 		self.badges = badges
 
+		"""
+		Badges
+
+		Cooker - 5% faster drug production per level
+		Contract Killer - 5% better chance of killing on a hitman job
+		Launder - 2 days faster per level
+		"""
+
 class Mobster(Human):
 	def __init__(self, 
-			name: str,
-			age: int,
-			height: int,
-			weight: int,
-			health: int,
-            intelligence: int,
+			affiliation: str,
 				
 			fighting: int,
 			shooting: int,
@@ -39,8 +42,12 @@ class Mobster(Human):
 			stealing: int,
 			stealth: int,
 				
-			charisma: int):
-		super.__init__(name, age, height, weight, health, intelligence)
+			charisma: int,
+			
+			*args, 
+            **kwargs):
+		super.__init__(*args, **kwargs)
+		self.affiliation = affiliation
 		self.fighting = fighting
 		self.shooting = shooting
 		self.driving = driving
@@ -50,36 +57,28 @@ class Mobster(Human):
 
 class Politician(Human):
 	def __init__(self,
-			name: str,
-			age: int,
-			height: int,
-			weight: int,
-			health: int,
-            intelligence: int,
-				
 			corruption: int,
                 
-            charisma: int):
-		super.__init__(name, age, height, weight, health, intelligence)
+            charisma: int,
+			
+			*args, 
+            **kwargs):
+		super.__init__(*args, **kwargs)
 		self.corruption = corruption
 		self.charisma = charisma
 
 # Police != Police chief
 class Police(Human):
     def __init__(self,
-            name: str,
-		    age: int,
-		    height: int,
-		    weight: int,
-		    health: int,
-            intelligence: int,
-        
             corruption: int,
             
             fighting: int,
             shooting: int,
-            driving: int):
-        super.__init__(name, age, height, weight, health, intelligence)
+            driving: int,
+			
+			*args, 
+            **kwargs):
+        super.__init__(*args, **kwargs)
         self.corruption = corruption
         self.fighting = fighting
         self.shooting = shooting
