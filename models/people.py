@@ -29,6 +29,7 @@ class Human:
 		Cooker - 5% faster drug production per level
 		Contract Killer - 5% better chance of killing on a hitman job
 		Launder - 2 days faster per level
+		Master Scout - 5% boost to recruiting
 		"""
 
 class Mobster(Human):

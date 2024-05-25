@@ -1,2 +1,2 @@
-from mob import Mob
+from mafia import *
 from people import *
